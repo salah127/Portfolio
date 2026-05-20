@@ -521,6 +521,21 @@ button:focus {
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.project-card-view .card-img-top {
+  height: 200px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+.project-card-view .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+}
+.project-card-view .card-body .card-text {
+  flex: 1 !important;
 }
 .project-card-view:hover {
   transform: scale(1.02) !important;
