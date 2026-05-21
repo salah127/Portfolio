@@ -16,13 +16,10 @@ function Github() {
       </h1>
       <GitHubCalendar
         username="salah127"
-        blockSize={15}
-        blockMargin={5}
-        colorScheme="dark"
-        theme={{
-          dark: ["#161b22", "#3d1a6e", "#6b21a8", "#9333ea", "#c084f5"],
-        }}
-        fontSize={16}
+        blockSize={30}
+        blockMargin={10}
+        color="#c084f5"
+        fontSize={20}
       />
     </Row>
   );
