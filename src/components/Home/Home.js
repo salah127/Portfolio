@@ -69,7 +69,7 @@ function Home() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/salah-eddine-jari"
+                  href="https://www.linkedin.com/in/salah-eddine-jari-a27962226/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -79,7 +79,7 @@ function Home() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/salah-eddine-jari"
+                  href="https://www.linkedin.com/in/salah-eddine-jari-a27962226/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
