@@ -824,6 +824,76 @@ button:focus {
   animation: skillFadeIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* ── Highway animation ── */
+@keyframes driveLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes driveRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.highway-container {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a0318 0%, #0f0520 50%, #0a0318 100%);
+  border: 1px solid rgba(200, 137, 230, 0.18);
+  border-radius: 16px;
+  padding: 6px 0;
+  margin-bottom: 50px;
+}
+
+/* Fade-out mask on left & right edges (road vanishing point effect) */
+.highway-container::before,
+.highway-container::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.highway-container::before {
+  left: 0;
+  background: linear-gradient(90deg, #0c0513 0%, transparent 100%);
+}
+.highway-container::after {
+  right: 0;
+  background: linear-gradient(-90deg, #0c0513 0%, transparent 100%);
+}
+
+.highway-lane {
+  overflow: hidden;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.07);
+  padding: 4px 0;
+}
+
+.highway-lane:last-child {
+  border-bottom: none;
+}
+
+.highway-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+}
+
+.highway-track-forward {
+  animation: driveLeft var(--lane-speed, 28s) linear infinite;
+}
+
+.highway-track-reverse {
+  animation: driveRight var(--lane-speed, 28s) linear infinite;
+}
+
+/* Pause all lanes on hover */
+.highway-container:hover .highway-track-forward,
+.highway-container:hover .highway-track-reverse {
+  animation-play-state: paused;
+}
+
 .fork-btn-inner {
   line-height: 1.4em !important;
   background-color: #934cce5e !important;

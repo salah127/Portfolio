@@ -52,109 +52,118 @@ import Postman from "../../Assets/TechIcons/Postman.svg";
 import AWS from "../../Assets/TechIcons/AWS.svg";
 import Kafka from "../../Assets/TechIcons/Kafka.svg";
 
-// ─── Single merged hourglass: 9+7+5+3+1+3+5+7+9 = 49 skills ─────────────────
-const hourglassRows = [
-  // ─── Row 1 – 9 (Languages) ───────────────────────────────────────
-  [
-    { icon: <img src={Javascript} alt="JavaScript" className="tech-icon-images" />, label: "JavaScript" },
-    { icon: <img src={Typescript} alt="TypeScript" className="tech-icon-images" />, label: "TypeScript" },
-    { icon: <img src={Python} alt="Python" className="tech-icon-images" />, label: "Python" },
-    { icon: <img src={Java} alt="Java" className="tech-icon-images" />, label: "Java" },
-    { icon: <img src={C} alt="C++" className="tech-icon-images" />, label: "C++" },
-    { icon: <img src={Go} alt="Go" className="tech-icon-images" />, label: "Go" },
-    { icon: <FaRust fontSize="1.6rem" />, label: "Rust" },
-    { icon: <SiPhp fontSize="1.6rem" />, label: "PHP" },
-    { icon: <img src={HaskellIcon} alt="Haskell" className="tech-icon-images" />, label: "Haskell" },
-  ],
-  // ─── Row 2 – 7 (Frontend + Salesforce Core) ──────────────────────
-  [
-    { icon: <SiHtml5 fontSize="1.6rem" />, label: "HTML5" },
-    { icon: <SiCss3 fontSize="1.6rem" />, label: "CSS3" },
-    { icon: <img src={ReactIcon} alt="React" className="tech-icon-images" />, label: "React.js" },
-    { icon: <SiNextdotjs fontSize="1.6rem" />, label: "Next.js" },
-    { icon: <img src={Node} alt="Node.js" className="tech-icon-images" />, label: "Node.js" },
-    { icon: <SiSalesforce fontSize="1.6rem" />, label: "Salesforce" },
-    { icon: <FaCode fontSize="1.6rem" />, label: "Apex" },
-  ],
-  // ─── Row 3 – 5 (Salesforce Dev + AI) ─────────────────────────────
-  [
-    { icon: <FaLayerGroup fontSize="1.6rem" />, label: "LWC" },
-    { icon: <MdAltRoute fontSize="1.6rem" />, label: "Flows" },
-    { icon: <FaDatabase fontSize="1.6rem" />, label: "SOQL" },
-    { icon: <FaBrain fontSize="1.6rem" />, label: "Einstein AI" },
-    { icon: <FaRobot fontSize="1.6rem" />, label: "Agentforce" },
-  ],
-  // ─── Row 4 – 3 (Databases) ───────────────────────────────────────
-  [
-    { icon: <img src={Mongo} alt="MongoDB" className="tech-icon-images" />, label: "MongoDB" },
-    { icon: <img src={SQL} alt="PostgreSQL" className="tech-icon-images" />, label: "PostgreSQL" },
-    { icon: <img src={Redis} alt="Redis" className="tech-icon-images" />, label: "Redis" },
-  ],
-  // ─── Row 5 – 1 (Waist / Centre) ──────────────────────────────────
-  [
-    { icon: <img src={Docker} alt="Docker" className="tech-icon-images" />, label: "Docker" },
-  ],
-  // ─── Row 6 – 3 (Cloud / Infra) ───────────────────────────────────
-  [
-    { icon: <img src={Kubernates} alt="Kubernetes" className="tech-icon-images" />, label: "Kubernetes" },
-    { icon: <img src={AWS} alt="AWS" className="tech-icon-images" />, label: "AWS" },
-    { icon: <img src={Firebase} alt="Firebase" className="tech-icon-images" />, label: "Firebase" },
-  ],
-  // ─── Row 7 – 5 (CRM + Data / AI) ─────────────────────────────────
-  [
-    { icon: <FaUsers fontSize="1.6rem" />, label: "CRM" },
-    { icon: <FaCloud fontSize="1.6rem" />, label: "Data Cloud" },
-    { icon: <FaChartBar fontSize="1.6rem" />, label: "Data Analytics" },
-    { icon: <FaBrain fontSize="1.6rem" />, label: "Machine Learning" },
-    { icon: <img src={Git} alt="Git" className="tech-icon-images" />, label: "Git" },
-  ],
-  // ─── Row 8 – 7 (Tooling / UI) ────────────────────────────────────
-  [
-    { icon: <img src={Redux} alt="Redux" className="tech-icon-images" />, label: "Redux" },
-    { icon: <img src={Tailwind} alt="Tailwind" className="tech-icon-images" />, label: "Tailwind CSS" },
-    { icon: <img src={MUI} alt="MUI" className="tech-icon-images" />, label: "Material UI" },
-    { icon: <img src={Kafka} alt="Kafka" className="tech-icon-images" />, label: "Kafka" },
-    { icon: <SiLinux fontSize="1.6rem" />, label: "Linux" },
-    { icon: <SiNginx fontSize="1.6rem" />, label: "Nginx" },
-    { icon: <img src={Postman} alt="Postman" className="tech-icon-images" />, label: "Postman" },
-  ],
-  // ─── Row 9 – 9 (Salesforce Ecosystem + Other) ────────────────────
-  [
-    { icon: <FaGithub fontSize="1.6rem" />, label: "GitHub" },
-    { icon: <SiSolidity fontSize="1.6rem" />, label: "Solidity" },
-    { icon: <FaChartLine fontSize="1.6rem" />, label: "Sales Cloud" },
-    { icon: <FaHeadset fontSize="1.6rem" />, label: "Service Cloud" },
-    { icon: <FaBolt fontSize="1.6rem" />, label: "Triggers" },
-    { icon: <FaFileCode fontSize="1.6rem" />, label: "Visualforce" },
-    { icon: <FaLink fontSize="1.6rem" />, label: "Integration" },
-    { icon: <FaExchangeAlt fontSize="1.6rem" />, label: "APIs" },
-    { icon: <FaCog fontSize="1.6rem" />, label: "SF Admin" },
-  ],
+// ─── Highway lanes: 7 lanes × 7 skills, alternating direction ────────────────
+const lanes = [
+  // Lane 1 → (Languages)
+  {
+    speed: "30s", direction: "forward",
+    skills: [
+      { icon: <img src={Javascript} alt="JS" className="tech-icon-images" />, label: "JavaScript" },
+      { icon: <img src={Typescript} alt="TS" className="tech-icon-images" />, label: "TypeScript" },
+      { icon: <img src={Python} alt="Python" className="tech-icon-images" />, label: "Python" },
+      { icon: <img src={Java} alt="Java" className="tech-icon-images" />, label: "Java" },
+      { icon: <img src={C} alt="C++" className="tech-icon-images" />, label: "C++" },
+      { icon: <img src={Go} alt="Go" className="tech-icon-images" />, label: "Go" },
+      { icon: <FaRust fontSize="1.6rem" style={{ color: "#CE422B" }} />, label: "Rust" },
+    ],
+  },
+  // Lane 2 ← (Frontend)
+  {
+    speed: "24s", direction: "reverse",
+    skills: [
+      { icon: <SiHtml5 fontSize="1.6rem" style={{ color: "#E34F26" }} />, label: "HTML5" },
+      { icon: <SiCss3 fontSize="1.6rem" style={{ color: "#1572B6" }} />, label: "CSS3" },
+      { icon: <img src={ReactIcon} alt="React" className="tech-icon-images" />, label: "React.js" },
+      { icon: <SiNextdotjs fontSize="1.6rem" style={{ color: "#ffffff" }} />, label: "Next.js" },
+      { icon: <img src={Node} alt="Node" className="tech-icon-images" />, label: "Node.js" },
+      { icon: <SiPhp fontSize="1.6rem" style={{ color: "#777BB4" }} />, label: "PHP" },
+      { icon: <img src={HaskellIcon} alt="Haskell" className="tech-icon-images" />, label: "Haskell" },
+    ],
+  },
+  // Lane 3 → (Salesforce Dev)
+  {
+    speed: "36s", direction: "forward",
+    skills: [
+      { icon: <SiSalesforce fontSize="1.6rem" style={{ color: "#00A1E0" }} />, label: "Salesforce" },
+      { icon: <FaCode fontSize="1.6rem" style={{ color: "#1589EE" }} />, label: "Apex" },
+      { icon: <FaLayerGroup fontSize="1.6rem" style={{ color: "#61DAFB" }} />, label: "LWC" },
+      { icon: <MdAltRoute fontSize="1.6rem" style={{ color: "#FF7F50" }} />, label: "Flows" },
+      { icon: <FaDatabase fontSize="1.6rem" style={{ color: "#4DB33D" }} />, label: "SOQL" },
+      { icon: <FaBolt fontSize="1.6rem" style={{ color: "#FBBF24" }} />, label: "Triggers" },
+      { icon: <FaFileCode fontSize="1.6rem" style={{ color: "#8B5CF6" }} />, label: "Visualforce" },
+    ],
+  },
+  // Lane 4 ← (Salesforce Ecosystem)
+  {
+    speed: "28s", direction: "reverse",
+    skills: [
+      { icon: <FaBrain fontSize="1.6rem" style={{ color: "#A855F7" }} />, label: "Einstein AI" },
+      { icon: <FaRobot fontSize="1.6rem" style={{ color: "#06B6D4" }} />, label: "Agentforce" },
+      { icon: <FaUsers fontSize="1.6rem" style={{ color: "#10B981" }} />, label: "CRM" },
+      { icon: <FaCloud fontSize="1.6rem" style={{ color: "#3B82F6" }} />, label: "Data Cloud" },
+      { icon: <FaChartLine fontSize="1.6rem" style={{ color: "#F59E0B" }} />, label: "Sales Cloud" },
+      { icon: <FaHeadset fontSize="1.6rem" style={{ color: "#EF4444" }} />, label: "Service Cloud" },
+      { icon: <FaCog fontSize="1.6rem" style={{ color: "#9CA3AF" }} />, label: "SF Admin" },
+    ],
+  },
+  // Lane 5 → (Databases & Infra)
+  {
+    speed: "32s", direction: "forward",
+    skills: [
+      { icon: <img src={Mongo} alt="MongoDB" className="tech-icon-images" />, label: "MongoDB" },
+      { icon: <img src={SQL} alt="PostgreSQL" className="tech-icon-images" />, label: "PostgreSQL" },
+      { icon: <img src={Redis} alt="Redis" className="tech-icon-images" />, label: "Redis" },
+      { icon: <img src={Docker} alt="Docker" className="tech-icon-images" />, label: "Docker" },
+      { icon: <img src={Kubernates} alt="Kubernetes" className="tech-icon-images" />, label: "Kubernetes" },
+      { icon: <img src={AWS} alt="AWS" className="tech-icon-images" />, label: "AWS" },
+      { icon: <img src={Firebase} alt="Firebase" className="tech-icon-images" />, label: "Firebase" },
+    ],
+  },
+  // Lane 6 ← (DevOps / Tooling)
+  {
+    speed: "22s", direction: "reverse",
+    skills: [
+      { icon: <img src={Git} alt="Git" className="tech-icon-images" />, label: "Git" },
+      { icon: <img src={Kafka} alt="Kafka" className="tech-icon-images" />, label: "Kafka" },
+      { icon: <img src={Redux} alt="Redux" className="tech-icon-images" />, label: "Redux" },
+      { icon: <img src={Tailwind} alt="Tailwind" className="tech-icon-images" />, label: "Tailwind CSS" },
+      { icon: <img src={MUI} alt="MUI" className="tech-icon-images" />, label: "Material UI" },
+      { icon: <SiLinux fontSize="1.6rem" style={{ color: "#FCC624" }} />, label: "Linux" },
+      { icon: <SiNginx fontSize="1.6rem" style={{ color: "#009900" }} />, label: "Nginx" },
+    ],
+  },
+  // Lane 7 → (Data, AI & Misc)
+  {
+    speed: "38s", direction: "forward",
+    skills: [
+      { icon: <img src={Postman} alt="Postman" className="tech-icon-images" />, label: "Postman" },
+      { icon: <FaGithub fontSize="1.6rem" style={{ color: "#ffffff" }} />, label: "GitHub" },
+      { icon: <SiSolidity fontSize="1.6rem" style={{ color: "#9CA3AF" }} />, label: "Solidity" },
+      { icon: <FaChartBar fontSize="1.6rem" style={{ color: "#06D6A0" }} />, label: "Data Analytics" },
+      { icon: <FaBrain fontSize="1.6rem" style={{ color: "#A855F7" }} />, label: "Machine Learning" },
+      { icon: <FaLink fontSize="1.6rem" style={{ color: "#14B8A6" }} />, label: "Integration" },
+      { icon: <FaExchangeAlt fontSize="1.6rem" style={{ color: "#F97316" }} />, label: "APIs" },
+    ],
+  },
 ];
 
 function Techstack() {
-  let delay = 0;
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingBottom: "50px" }}>
-      {hourglassRows.map((row, rowIndex) => (
-        <div
-          key={rowIndex}
-          style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
-        >
-          {row.map((skill, skillIndex) => {
-            const animDelay = `${delay * 0.045}s`;
-            delay++;
-            return (
-              <div
-                key={skillIndex}
-                className="tech-icons skill-fade-in"
-                style={{ animationDelay: animDelay }}
-              >
+    <div className="highway-container">
+      {lanes.map((lane, laneIndex) => (
+        <div key={laneIndex} className="highway-lane">
+          {/* duplicate skills for seamless infinite scroll */}
+          <div
+            className={`highway-track highway-track-${lane.direction}`}
+            style={{ "--lane-speed": lane.speed }}
+          >
+            {[...lane.skills, ...lane.skills].map((skill, i) => (
+              <div key={i} className="tech-icons">
                 {skill.icon}
                 <div className="tech-icons-text">{skill.label}</div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       ))}
     </div>
@@ -162,3 +171,4 @@ function Techstack() {
 }
 
 export default Techstack;
+
