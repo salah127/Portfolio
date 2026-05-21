@@ -20,10 +20,9 @@ function Github() {
         blockMargin={5}
         colorScheme="dark"
         theme={{
-          dark: ["#1a1a2e", "#6b21a8", "#9333ea", "#c084f5", "#e9d5ff"],
+          dark: ["#161b22", "#3d1a6e", "#6b21a8", "#9333ea", "#c084f5"],
         }}
-        fontSize={14}
-        style={{ maxWidth: "100%" }}
+        fontSize={16}
       />
     </Row>
   );
