@@ -21,7 +21,6 @@ import {
   FaCloud,
   FaChartLine,
   FaHeadset,
-  FaGraduationCap,
   FaCog,
   FaBolt,
   FaFileCode,
