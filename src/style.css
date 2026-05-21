@@ -808,6 +808,22 @@ button:focus {
   padding-top: 10px !important;
 }
 
+/* ── Skill card stagger animation ── */
+@keyframes skillFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.skill-fade-in {
+  animation: skillFadeIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 .fork-btn-inner {
   line-height: 1.4em !important;
   background-color: #934cce5e !important;

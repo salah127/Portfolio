@@ -53,9 +53,9 @@ import Postman from "../../Assets/TechIcons/Postman.svg";
 import AWS from "../../Assets/TechIcons/AWS.svg";
 import Kafka from "../../Assets/TechIcons/Kafka.svg";
 
-// Hourglass shape: 7 → 5 → 3 → 1 → 3 → 5 → 7
+// ─── Single merged hourglass: 9+7+5+3+1+3+5+7+9 = 49 skills ─────────────────
 const hourglassRows = [
-  // ─── Row 1 – 7 (Languages) ───────────────────────────────────────
+  // ─── Row 1 – 9 (Languages) ───────────────────────────────────────
   [
     { icon: <img src={Javascript} alt="JavaScript" className="tech-icon-images" />, label: "JavaScript" },
     { icon: <img src={Typescript} alt="TypeScript" className="tech-icon-images" />, label: "TypeScript" },
@@ -64,52 +64,77 @@ const hourglassRows = [
     { icon: <img src={C} alt="C++" className="tech-icon-images" />, label: "C++" },
     { icon: <img src={Go} alt="Go" className="tech-icon-images" />, label: "Go" },
     { icon: <FaRust fontSize="1.6rem" />, label: "Rust" },
+    { icon: <SiPhp fontSize="1.6rem" />, label: "PHP" },
+    { icon: <img src={HaskellIcon} alt="Haskell" className="tech-icon-images" />, label: "Haskell" },
   ],
-  // ─── Row 2 – 5 (Frontend) ────────────────────────────────────────
+  // ─── Row 2 – 7 (Frontend + Salesforce Core) ──────────────────────
   [
     { icon: <SiHtml5 fontSize="1.6rem" />, label: "HTML5" },
     { icon: <SiCss3 fontSize="1.6rem" />, label: "CSS3" },
     { icon: <img src={ReactIcon} alt="React" className="tech-icon-images" />, label: "React.js" },
     { icon: <SiNextdotjs fontSize="1.6rem" />, label: "Next.js" },
     { icon: <img src={Node} alt="Node.js" className="tech-icon-images" />, label: "Node.js" },
+    { icon: <SiSalesforce fontSize="1.6rem" />, label: "Salesforce" },
+    { icon: <FaCode fontSize="1.6rem" />, label: "Apex" },
   ],
-  // ─── Row 3 – 3 (Databases) ───────────────────────────────────────
+  // ─── Row 3 – 5 (Salesforce Dev + AI) ─────────────────────────────
+  [
+    { icon: <FaLayerGroup fontSize="1.6rem" />, label: "LWC" },
+    { icon: <MdAltRoute fontSize="1.6rem" />, label: "Flows" },
+    { icon: <FaDatabase fontSize="1.6rem" />, label: "SOQL" },
+    { icon: <FaBrain fontSize="1.6rem" />, label: "Einstein AI" },
+    { icon: <FaRobot fontSize="1.6rem" />, label: "Agentforce" },
+  ],
+  // ─── Row 4 – 3 (Databases) ───────────────────────────────────────
   [
     { icon: <img src={Mongo} alt="MongoDB" className="tech-icon-images" />, label: "MongoDB" },
     { icon: <img src={SQL} alt="PostgreSQL" className="tech-icon-images" />, label: "PostgreSQL" },
     { icon: <img src={Redis} alt="Redis" className="tech-icon-images" />, label: "Redis" },
   ],
-  // ─── Row 4 – 1 (Centre / Waist) ──────────────────────────────────
+  // ─── Row 5 – 1 (Waist / Centre) ──────────────────────────────────
   [
     { icon: <img src={Docker} alt="Docker" className="tech-icon-images" />, label: "Docker" },
   ],
-  // ─── Row 5 – 3 (Cloud / Infra) ───────────────────────────────────
+  // ─── Row 6 – 3 (Cloud / Infra) ───────────────────────────────────
   [
     { icon: <img src={Kubernates} alt="Kubernetes" className="tech-icon-images" />, label: "Kubernetes" },
     { icon: <img src={AWS} alt="AWS" className="tech-icon-images" />, label: "AWS" },
     { icon: <img src={Firebase} alt="Firebase" className="tech-icon-images" />, label: "Firebase" },
   ],
-  // ─── Row 6 – 5 (Tooling / UI) ────────────────────────────────────
+  // ─── Row 7 – 5 (CRM + Data / AI) ─────────────────────────────────
   [
+    { icon: <FaUsers fontSize="1.6rem" />, label: "CRM" },
+    { icon: <FaCloud fontSize="1.6rem" />, label: "Data Cloud" },
+    { icon: <FaChartBar fontSize="1.6rem" />, label: "Data Analytics" },
+    { icon: <FaBrain fontSize="1.6rem" />, label: "Machine Learning" },
     { icon: <img src={Git} alt="Git" className="tech-icon-images" />, label: "Git" },
-    { icon: <img src={Kafka} alt="Kafka" className="tech-icon-images" />, label: "Kafka" },
+  ],
+  // ─── Row 8 – 7 (Tooling / UI) ────────────────────────────────────
+  [
     { icon: <img src={Redux} alt="Redux" className="tech-icon-images" />, label: "Redux" },
     { icon: <img src={Tailwind} alt="Tailwind" className="tech-icon-images" />, label: "Tailwind CSS" },
     { icon: <img src={MUI} alt="MUI" className="tech-icon-images" />, label: "Material UI" },
-  ],
-  // ─── Row 7 – 7 (Misc / Other) ────────────────────────────────────
-  [
-    { icon: <SiSolidity fontSize="1.6rem" />, label: "Solidity" },
-    { icon: <img src={HaskellIcon} alt="Haskell" className="tech-icon-images" />, label: "Haskell" },
+    { icon: <img src={Kafka} alt="Kafka" className="tech-icon-images" />, label: "Kafka" },
+    { icon: <SiLinux fontSize="1.6rem" />, label: "Linux" },
     { icon: <SiNginx fontSize="1.6rem" />, label: "Nginx" },
     { icon: <img src={Postman} alt="Postman" className="tech-icon-images" />, label: "Postman" },
-    { icon: <SiLinux fontSize="1.6rem" />, label: "Linux" },
-    { icon: <SiPhp fontSize="1.6rem" />, label: "PHP" },
+  ],
+  // ─── Row 9 – 9 (Salesforce Ecosystem + Other) ────────────────────
+  [
     { icon: <FaGithub fontSize="1.6rem" />, label: "GitHub" },
+    { icon: <SiSolidity fontSize="1.6rem" />, label: "Solidity" },
+    { icon: <FaChartLine fontSize="1.6rem" />, label: "Sales Cloud" },
+    { icon: <FaHeadset fontSize="1.6rem" />, label: "Service Cloud" },
+    { icon: <FaBolt fontSize="1.6rem" />, label: "Triggers" },
+    { icon: <FaFileCode fontSize="1.6rem" />, label: "Visualforce" },
+    { icon: <FaLink fontSize="1.6rem" />, label: "Integration" },
+    { icon: <FaExchangeAlt fontSize="1.6rem" />, label: "APIs" },
+    { icon: <FaCog fontSize="1.6rem" />, label: "SF Admin" },
   ],
 ];
 
 function Techstack() {
+  let delay = 0;
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingBottom: "50px" }}>
       {hourglassRows.map((row, rowIndex) => (
@@ -117,12 +142,20 @@ function Techstack() {
           key={rowIndex}
           style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
         >
-          {row.map((skill, skillIndex) => (
-            <div key={skillIndex} className="tech-icons">
-              {skill.icon}
-              <div className="tech-icons-text">{skill.label}</div>
-            </div>
-          ))}
+          {row.map((skill, skillIndex) => {
+            const animDelay = `${delay * 0.045}s`;
+            delay++;
+            return (
+              <div
+                key={skillIndex}
+                className="tech-icons skill-fade-in"
+                style={{ animationDelay: animDelay }}
+              >
+                {skill.icon}
+                <div className="tech-icons-text">{skill.label}</div>
+              </div>
+            );
+          })}
         </div>
       ))}
     </div>
@@ -130,103 +163,3 @@ function Techstack() {
 }
 
 export default Techstack;
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Salesforce Ecosystem  –  Hourglass: 5 → 3 → 1 → 3 → 5
-// ─────────────────────────────────────────────────────────────────────────────
-const sfRows = [
-  // ─── Row 1 – 5 (Core Platform) ───────────────────────────────────
-  [
-    { icon: <SiSalesforce fontSize="1.6rem" />, label: "Salesforce" },
-    { icon: <FaCode fontSize="1.6rem" />, label: "Apex" },
-    { icon: <FaLayerGroup fontSize="1.6rem" />, label: "LWC" },
-    { icon: <MdAltRoute fontSize="1.6rem" />, label: "Flows" },
-    { icon: <FaDatabase fontSize="1.6rem" />, label: "SOQL" },
-  ],
-  // ─── Row 2 – 3 (AI / CRM) ────────────────────────────────────────
-  [
-    { icon: <FaBrain fontSize="1.6rem" />, label: "Einstein AI" },
-    { icon: <FaRobot fontSize="1.6rem" />, label: "Agentforce" },
-    { icon: <FaUsers fontSize="1.6rem" />, label: "CRM" },
-  ],
-  // ─── Row 3 – 1 (Centre / Waist) ──────────────────────────────────
-  [
-    { icon: <FaCloud fontSize="1.6rem" />, label: "Data Cloud" },
-  ],
-  // ─── Row 4 – 3 (Clouds) ──────────────────────────────────────────
-  [
-    { icon: <FaChartLine fontSize="1.6rem" />, label: "Sales Cloud" },
-    { icon: <FaHeadset fontSize="1.6rem" />, label: "Service Cloud" },
-    { icon: <FaGraduationCap fontSize="1.6rem" />, label: "Trailhead" },
-  ],
-  // ─── Row 5 – 5 (Dev / Integration) ──────────────────────────────
-  [
-    { icon: <FaCog fontSize="1.6rem" />, label: "Administration" },
-    { icon: <FaBolt fontSize="1.6rem" />, label: "Triggers" },
-    { icon: <FaFileCode fontSize="1.6rem" />, label: "Visualforce" },
-    { icon: <FaLink fontSize="1.6rem" />, label: "Integration" },
-    { icon: <FaExchangeAlt fontSize="1.6rem" />, label: "APIs" },
-  ],
-];
-
-export function SalesforceStack() {
-  return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingBottom: "50px" }}>
-      {sfRows.map((row, rowIndex) => (
-        <div
-          key={rowIndex}
-          style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
-        >
-          {row.map((skill, skillIndex) => (
-            <div key={skillIndex} className="tech-icons">
-              {skill.icon}
-              <div className="tech-icons-text">{skill.label}</div>
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Data & AI  –  Hourglass: 3 → 1 → 3
-// ─────────────────────────────────────────────────────────────────────────────
-const dataAiRows = [
-  // ─── Row 1 – 3 ───────────────────────────────────────────────────
-  [
-    { icon: <FaChartBar fontSize="1.6rem" />, label: "Data Analytics" },
-    { icon: <FaBrain fontSize="1.6rem" />, label: "Machine Learning" },
-    { icon: <FaRobot fontSize="1.6rem" />, label: "Prompt Eng." },
-  ],
-  // ─── Row 2 – 1 (Centre) ──────────────────────────────────────────
-  [
-    { icon: <SiSalesforce fontSize="1.6rem" />, label: "AI Associate" },
-  ],
-  // ─── Row 3 – 3 ───────────────────────────────────────────────────
-  [
-    { icon: <FaDatabase fontSize="1.6rem" />, label: "Data Wrangling" },
-    { icon: <FaChartLine fontSize="1.6rem" />, label: "Statistics" },
-    { icon: <FaLink fontSize="1.6rem" />, label: "Automation" },
-  ],
-];
-
-export function DataAIStack() {
-  return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingBottom: "50px" }}>
-      {dataAiRows.map((row, rowIndex) => (
-        <div
-          key={rowIndex}
-          style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
-        >
-          {row.map((skill, skillIndex) => (
-            <div key={skillIndex} className="tech-icons">
-              {skill.icon}
-              <div className="tech-icons-text">{skill.label}</div>
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-}

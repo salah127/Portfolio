@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Github from "./Github";
-import Techstack, { SalesforceStack, DataAIStack } from "./Techstack";
+import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
@@ -41,16 +41,6 @@ function About() {
           </h1>
 
           <Techstack />
-
-          <h1 className="project-heading">
-            <strong className="purple">Salesforce</strong> Ecosystem
-          </h1>
-          <SalesforceStack />
-
-          <h1 className="project-heading">
-            Data &amp; <strong className="purple">AI</strong> Skills
-          </h1>
-          <DataAIStack />
 
           <h1 className="project-heading">
             <strong className="purple">Tools</strong> I use
