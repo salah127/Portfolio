@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import insead from "../../Assets/Projects/insead.png";
 import intake from "../../Assets/Projects/intake.png";
-import AlMaimouni from "../../Assets/Projects/AlMaimouni.png";
+import AlMaimouni from "../../Assets/Projects/AlMaimouni.svg";
 import boostfy from "../../Assets/Projects/boostify.png";
 import autoApply from "../../Assets/Projects/auto_apply.png";
 import globalExam from "../../Assets/Projects/global_exame.png";

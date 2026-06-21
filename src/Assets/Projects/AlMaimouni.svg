@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60">
+  <!-- Top decorative line -->
+  <line x1="8" y1="7" x2="292" y2="7" stroke="#d4af37" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Left diamond ornament -->
+  <polygon points="20,30 25,23 30,30 25,37" fill="#d4af37" opacity="0.85"/>
+
+  <!-- Main restaurant name -->
+  <text x="150" y="29"
+    font-family="'Forum', 'Palatino Linotype', Georgia, serif"
+    font-size="22"
+    font-weight="400"
+    letter-spacing="3"
+    fill="#d4af37"
+    text-anchor="middle"
+    dominant-baseline="middle">AL MAIMOUNI</text>
+
+  <!-- Subtitle -->
+  <text x="150" y="46"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="7"
+    font-weight="400"
+    letter-spacing="4"
+    fill="#d4af37"
+    opacity="0.75"
+    text-anchor="middle">CUISINE MAROCAINE · TANGER</text>
+
+  <!-- Right diamond ornament -->
+  <polygon points="270,30 275,23 280,30 275,37" fill="#d4af37" opacity="0.85"/>
+
+  <!-- Bottom decorative line -->
+  <line x1="8" y1="54" x2="292" y2="54" stroke="#d4af37" stroke-width="0.8" opacity="0.6"/>
+</svg>
