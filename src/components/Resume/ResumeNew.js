@@ -27,16 +27,20 @@ const labelStyle = {
 };
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
+  const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
   const [zoomPage, setZoomPage] = useState(null); // 1 or 2
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    const handleResize = () => setWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const isMobile = width <= 786;
-  const pageScale = isMobile ? 0.6 : 0.95;
-  const zoomScale = isMobile ? 0.9 : 1.6;
+  const pageScale = isMobile ? 0.55 : 0.95;
+  const zoomScale = isMobile ? 0.8 : 1.6;
 
   return (
     <div>
@@ -44,12 +48,16 @@ function ResumeNew() {
         <Particle />
 
         {/* Download button — top */}
-        <Row style={{ justifyContent: "center", position: "relative", marginBottom: "40px" }}>
+        <Row
+          className="resume-actions-row"
+          style={{ justifyContent: "center", position: "relative", marginBottom: isMobile ? "24px" : "40px" }}
+        >
           <Button
             variant="primary"
             href={pdf}
             target="_blank"
-            style={{ maxWidth: "250px" }}
+            className="resume-download-btn"
+            style={{ maxWidth: isMobile ? "220px" : "250px", width: isMobile ? "85%" : "auto" }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV
@@ -63,19 +71,23 @@ function ResumeNew() {
             alignItems: "flex-start",
             flexDirection: isMobile ? "column" : "row",
             flexWrap: "nowrap",
-            gap: isMobile ? "32px" : "0",
+            gap: isMobile ? "24px" : "0",
             paddingBottom: "50px",
           }}
         >
-          <Document file={pdf} className="d-flex justify-content-center" style={{ flexDirection: isMobile ? "column" : "row" }}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <Document
+            file={pdf}
+            className="d-flex justify-content-center resume-pdf-document"
+            style={{ flexDirection: isMobile ? "column" : "row" }}
+          >
+            <div className="resume-pdf-page" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <p style={labelStyle}>Page 1</p>
               <div style={pageStyle} onClick={() => setZoomPage(1)} title="Click to zoom">
                 <Page pageNumber={1} scale={pageScale} />
               </div>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: isMobile ? "32px" : "0" }}>
+            <div className="resume-pdf-page" style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: isMobile ? "0" : "0" }}>
               <p style={labelStyle}>Page 2</p>
               <div style={pageStyle} onClick={() => setZoomPage(2)} title="Click to zoom">
                 <Page pageNumber={2} scale={pageScale} />
@@ -90,7 +102,8 @@ function ResumeNew() {
             variant="primary"
             href={pdf}
             target="_blank"
-            style={{ maxWidth: "250px" }}
+            className="resume-download-btn"
+            style={{ maxWidth: isMobile ? "220px" : "250px", width: isMobile ? "85%" : "auto" }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV
